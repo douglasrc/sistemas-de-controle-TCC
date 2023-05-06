@@ -2,7 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
 :root {
   --primary-color: #299d91;
-  --secondary-color: #ffffff;
+  --secondary-color: rgba(255, 255, 255, 0.7);
+  --bg-primary-color: #191919;
+}
+.App {
+  width: 100%;
+  min-height: 100%;
+  height: fit-content;
+  display: flex;
+  background-color: var(--bg-primary-color);
 }
 
 * {
