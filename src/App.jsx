@@ -1,11 +1,12 @@
-import Login from './components/Login'
+import Login from "./components/Login";
+import Sidebar from "./components/Pages/Sidebar";
 
 function App() {
   return (
     <div className="App">
-     <Login/>
+      <Sidebar />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
