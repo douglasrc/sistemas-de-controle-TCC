@@ -1,0 +1,64 @@
+.widgetSm {
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  margin-right: 20px;
+  width: 100%;
+  max-width: 352px;
+
+  .widgetSmTitle {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .widgetSmList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .widgetSmListItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0px;
+
+      .icon-paid {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+
+        .material-symbols-outlined {
+          font-size: 30px;
+        }
+
+        .widgetSmUser {
+          display: flex;
+          flex-direction: column;
+
+          .widgetSmUsername {
+            font-weight: 600;
+          }
+
+          .widgetSmUserTitle {
+            font-weight: 300;
+          }
+        }
+      }
+
+      .informations {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .price {
+          font-weight: 600;
+        }
+
+        .data {
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

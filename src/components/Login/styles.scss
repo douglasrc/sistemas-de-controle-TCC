@@ -26,6 +26,37 @@
     form {
       width: 100%;
       max-width: 450px;
+
+      .input-group {
+        &:first-child {
+          margin-bottom: 25px;
+        }
+
+        & > input,
+        .password-input {
+          width: 100%;
+          height: 60px;
+          border: 1px solid #4b5768;
+          border-radius: 8px;
+          margin-top: 8px;
+          padding: 0 24px;
+        }
+        .password-input {
+          display: flex;
+          align-items: center;
+          background: #ffffff;
+
+          input {
+            border: none;
+            width: 100%;
+            height: 100%;
+          }
+
+          span {
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 

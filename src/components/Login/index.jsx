@@ -4,9 +4,23 @@ import "./styles.scss";
 const Login = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const hembleLogin = (e) => {
+  const [typeInput, setTypeInput] = useState("password");
+  const [typeIcon, setTypeIcon] = useState("visibility");
+
+  const hambleLogin = (e) => {
     e.preventDefault();
   };
+
+  const hambleIsVisible = () => {
+    if (typeInput == "password") {
+      setTypeInput("text");
+      setTypeIcon("visibility_off");
+    } else {
+      setTypeInput("password");
+      setTypeIcon("visibility");
+    }
+  };
+
   return (
     <section className="container-form">
       <section className="content-form">
@@ -14,7 +28,7 @@ const Login = () => {
           <h1>Sistema de Controle</h1>
         </div>
 
-        <form onSubmit={hembleLogin}>
+        <form onSubmit={hambleLogin}>
           <div className="input-group">
             <label>Ursername</label>
             <input
@@ -26,12 +40,20 @@ const Login = () => {
           </div>
           <div className="input-group">
             <label>Password</label>
-            <input
-              type="password"
-              placeholder="●●●●●●●●"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            ></input>
+            <div className="password-input">
+              <input
+                type={typeInput}
+                placeholder="●●●●●●●●"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+              <span
+                className="material-symbols-outlined"
+                onClick={hambleIsVisible}
+              >
+                {typeIcon}
+              </span>
+            </div>
           </div>
           <button type="submit">Login</button>
         </form>
