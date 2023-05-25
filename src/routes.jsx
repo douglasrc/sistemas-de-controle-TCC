@@ -6,6 +6,7 @@ import { AuthContext } from "./context/AuthContext";
 
 import Board from "./components/Pages/Board";
 import Login from "./components/Login";
+import Inventory from "./components/Pages/Sidebar/components/Invetory";
 
 const RequireAuth = ({ children }) => {
   const { currentUser } = useContext(AuthContext);
@@ -23,7 +24,10 @@ const router = createBrowserRouter([
         </RequireAuth>
       </GlobalContextUser>
     ),
-    children: [{ path: "/", element: <Board /> }],
+    children: [
+      { path: "/", element: <Board /> },
+      { path: "/inventory", element: <Inventory /> },
+    ],
   },
   {
     path: "/login",

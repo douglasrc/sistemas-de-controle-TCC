@@ -5,7 +5,7 @@ const Cards = () => {
   return (
     <section className="container-cards">
       <div className="column-cards">
-        <h1>Transações Recentes</h1>
+        <h1>Emprestimos</h1>
 
         <div className="cards">
           <Card />

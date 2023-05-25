@@ -23,7 +23,7 @@ const Sidebar = () => {
             <Link to="relatorios">Relatorios</Link>
           </li>
           <li>
-            <Link to="configuracoes">Estoque</Link>
+            <Link to="/inventory">Estoque</Link>
           </li>
         </ul>
       </nav>
