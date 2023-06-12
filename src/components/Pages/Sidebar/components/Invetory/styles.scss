@@ -56,6 +56,55 @@
   resize: none;
   line-height: 16px;
 }
+
+.register-container .content form input[type="file"] {
+  margin-top: 10px;
+  padding-left: 15px;
+  background-color: #f0f0f5;
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #737380;
+}
+
+.register-container .content form input[type="file"]::placeholder {
+  color: #070707;
+}
+
+.register-container .content form input[type="file"]:focus {
+  outline: none;
+  border-color: #8e4dff;
+  box-shadow: 0 0 0 3px rgba(142, 77, 255, 0.2);
+}
+
+.register-container
+  .content
+  form
+  input[type="file"]::-webkit-file-upload-button {
+  background: #8e4dff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-container
+  .content
+  form
+  input[type="file"]::-webkit-file-upload-button:hover {
+  background: #6c36c5;
+}
+
+.register-container
+  .content
+  form
+  input[type="file"]::-webkit-file-upload-button:active {
+  background: #531faa;
+}
+
 .logo-user-register img {
   width: 350px;
 }

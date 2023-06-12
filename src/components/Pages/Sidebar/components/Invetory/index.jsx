@@ -14,6 +14,7 @@ export default function Inventory() {
   const [uf, setUf] = useState("");
   const [address, setAddress] = useState("");
   const [description, setDescription] = useState("");
+  const [foto, setFoto] = useState("null");
 
   async function handleUserRegister(e) {
     e.preventDefault();
@@ -29,8 +30,14 @@ export default function Inventory() {
       uf,
       address,
       description,
+      foto,
     };
   }
+
+  const handleFotoChange = (event) => {
+    const arquivo = event.target.files[0];
+    setFoto(arquivo);
+  };
 
   return (
     <div className="register-container">
@@ -44,13 +51,13 @@ export default function Inventory() {
           />
           <div className="input-group">
             <input
-              placeholder="Número de Serie"
+              placeholder="Armario"
               value={cpf}
               onChange={(e) => setCpf(e.target.value)}
               required
             />
             <input
-              placeholder="Descrição"
+              placeholder="Caixa"
               value={rg}
               onChange={(e) => setRg(e.target.value)}
               required
@@ -64,27 +71,17 @@ export default function Inventory() {
               required
             />
           </div>
-          <input
-            type="email"
-            placeholder="***********"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            placeholder="***********"
-            value={whatsapp}
-            onChange={(e) => setWhatsapp(e.target.value)}
-            required
-          />
 
           <textarea
             className="textarea-traveler"
-            placeholder="Caracteristicas"
+            placeholder="Descrição"
             style={{ height: 92 }}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
+
+          <input type="file" onChange={handleFotoChange} />
+
           <button className="button" type="submit">
             Cadastrar
           </button>
