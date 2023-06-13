@@ -5,30 +5,21 @@ import "./styles.scss";
 
 export default function Inventory() {
   const [name, setName] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [rg, setRg] = useState("");
-  const [age, setAge] = useState("");
-  const [email, setEmail] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-  const [city, setCity] = useState("");
-  const [uf, setUf] = useState("");
-  const [address, setAddress] = useState("");
+  const [armario, setArmario] = useState("");
+  const [caixa, setCaixa] = useState("");
+  const [qtd, setQtd] = useState("");
   const [description, setDescription] = useState("");
   const [foto, setFoto] = useState("null");
+  const [preview, setPreview] = useState("null");
 
   async function handleUserRegister(e) {
     e.preventDefault();
 
     const data = {
       name,
-      cpf,
-      rg,
-      age,
-      email,
-      whatsapp,
-      city,
-      uf,
-      address,
+      armario,
+      caixa,
+      qtd,
       description,
       foto,
     };
@@ -37,6 +28,14 @@ export default function Inventory() {
   const handleFotoChange = (event) => {
     const arquivo = event.target.files[0];
     setFoto(arquivo);
+
+    const previewURL = URL.createObjectURL(arquivo);
+    setPreview(previewURL);
+  };
+
+  const handleRemoveFoto = () => {
+    setFoto(null);
+    setPreview(null);
   };
 
   return (
@@ -52,22 +51,22 @@ export default function Inventory() {
           <div className="input-group">
             <input
               placeholder="Armario"
-              value={cpf}
-              onChange={(e) => setCpf(e.target.value)}
+              value={armario}
+              onChange={(e) => setArmario(e.target.value)}
               required
             />
             <input
               placeholder="Caixa"
-              value={rg}
-              onChange={(e) => setRg(e.target.value)}
+              value={caixa}
+              onChange={(e) => setCaixa(e.target.value)}
               required
             />
             <input
               type="number"
               placeholder="Quantidade"
               style={{ width: 110 }}
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
+              value={qtd}
+              onChange={(e) => setQtd(e.target.value)}
               required
             />
           </div>
@@ -81,6 +80,15 @@ export default function Inventory() {
           />
 
           <input type="file" onChange={handleFotoChange} />
+
+          {preview && (
+            <div>
+              <img src={preview} style={{ maxWidth: "50%", marginTop: 10 }} />
+              <button type="button" onClick={handleRemoveFoto}>
+                Remover Imagem
+              </button>
+            </div>
+          )}
 
           <button className="button" type="submit">
             Cadastrar
