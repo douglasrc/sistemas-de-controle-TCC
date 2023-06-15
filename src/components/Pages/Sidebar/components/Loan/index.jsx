@@ -6,9 +6,9 @@ import "./styles.scss";
 export default function Loan() {
   const [borrowerName, setBorrowerName] = useState("");
   const [qtd, setQtd] = useState("");
-  const [id, setId] = useState("null");
-  const [phone, setPhone] = useState("null");
-  const [date, setDate] = useState("null");
+  const [id, setId] = useState("");
+  const [phone, setPhone] = useState("");
+  const [date, setDate] = useState("");
 
   async function handleUserRegister(e) {
     e.preventDefault();
