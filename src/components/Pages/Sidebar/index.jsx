@@ -17,10 +17,10 @@ const Sidebar = () => {
             <Link to="/">Resumo</Link>
           </li>
           <li>
-            <Link to="equipes">Compras</Link>
+            <Link to="/loan">Empréstimos</Link>
           </li>
           <li>
-            <Link to="relatorios">Relatorios</Link>
+            <Link to="/reports">Relatorios</Link>
           </li>
           <li>
             <Link to="/inventory">Estoque</Link>
